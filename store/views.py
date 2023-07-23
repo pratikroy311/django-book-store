@@ -21,4 +21,9 @@ def product_detail(request,slug):
     product = get_object_or_404(models.Products,slug=slug,in_stock=True)
     return render(request,'store/products/detail.html',{'product':product})
 
+def category_list(request,category_slug):
+    category = get_object_or_404(models.Category,slug=category_slug)
+    products = models.Products.objects.filter(category=category)
+    return render(request,'store/products/category.html',{"category":category,"products":products})
+
 
