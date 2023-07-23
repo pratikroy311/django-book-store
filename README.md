@@ -1,1 +1,1 @@
-# django-ecommerce
+# django-Book-Store
