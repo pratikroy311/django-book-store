@@ -2,12 +2,12 @@
 {% load static %}
 
 
-{% block title %} Home {% endblock %}
+{% block title %} BookStore {% endblock %}
 {% block content %}
     {% include 'store/navbar.html' %}
     
     <section class="py-5 text-center container">
-        <div class="row py-lg-5">
+        <div class="row py-lg-3">
           <div class="col-lg-6 col-md-8 mx-auto">
             <h1 class="h1 fw-bold">Search, Read, Buy, Review</h1>
             <p class="lead text-muted">"A reader lives a thousand lives before he dies. The man who never reads lives only one." - George R.R. Martin</p>
@@ -23,7 +23,7 @@
       <div class="container">
         <div class="pb-3 h5"> All Books </div>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-          {% for product in products%}
+          {% for product in products %}
             <div class="col">
               <a class="text-dark text-decoration-none" href="{{ product.get_absolute_url }}">
               <div class="card shadow-sm">

@@ -2,7 +2,10 @@
 {% load static %}
 
 
-{% block title %} {{ product.title }} {% endblock %}
+{% block title %}
+{% if category %}{{ category.name}}
+{% else %}Products {% endif %}
+{% endblock %}
 {% block content %}
     {% include '../navbar.html' %}
     <div class="py-5 text-center container">
