@@ -20,7 +20,6 @@
               Library
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="">All</a></li>
               {% for category in categories %}
               <li>
                 <a class="dropdown-item" href="{{ category.get_absolute_url }}">{{ category.name|title }}</a>
