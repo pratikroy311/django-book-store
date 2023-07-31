@@ -16,7 +16,9 @@ More features will be added like user,payment and order management system, wish 
 * Detail page for each product
 
 #### Basket with session Handling:
-*   Add to basket
+    we are doing site-wide session handling here. If a user adds multiple elements to the basket, the cart gets updated
+*   Add to basket(multiple items)
+*   view all items in basket
 *   Delete from basket
 *   Update basket
 <img src="bookstore.png"></img>
