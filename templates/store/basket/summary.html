@@ -51,10 +51,6 @@
                 </div>
             </div>
         </div>
-        <div class="col-12 text-center">
-            <div class="h6 fw-bold">Sub Total: ₹<div id="subtotal" class="d-inline-flex">{{item.total_price}}</div>
-            </div>
-        </div>
     </div>
     {% endwith %}
     {% endfor %}
@@ -65,6 +61,47 @@
 </div>
 
 <script>
-    
+    $(document).on('click', '.delete-button', function (e) {
+        e.preventDefault();
+        var productid = $(this).data('index');
+        $.ajax({
+            type: 'POST',
+            url: '{% url "basket:basket_delete" %}',
+            data: {
+                productid: productid,
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+                console.log(json);
+                $('.product-item[data-index="'+ productid +'"]').remove();
+                document.getElementById("basket-qty").innerHTML = json.qty
+                document.getElementById("subtotal").innerHTML = json.subtotal
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
+    //update item
+    $(document).on('click', '.update-button', function (e) {
+        e.preventDefault();
+        var productid = $(this).data('index');
+        var productqty= $('#select' + productid + ' option:selected').text();
+        $.ajax({
+            type: 'POST',
+            url: '{% url "basket:basket_update" %}',
+            data: {
+                productid: productid,
+                productqty:productqty,
+                csrfmiddlewaretoken: "{{csrf_token}}",
+                action: 'post'
+            },
+            success: function (json) {
+                console.log(json);
+                document.getElementById("basket-qty").innerHTML = json.qty
+                document.getElementById("subtotal").innerHTML = json.subtotal
+            },
+            error: function (xhr, errmsg, err) {}
+        });
+    })
 </script>
 {% endblock %}
