@@ -21,4 +21,9 @@ More features will be added like user,payment and order management system, wish 
 *   view all items in basket
 *   Delete from basket
 *   Update basket
+
+#### User management:
+*   signup
+*   login/logout
+
 <img src="bookstore.png"></img>
