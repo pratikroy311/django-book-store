@@ -3,7 +3,7 @@ from store import models
 # Create your views here.
 
 def product_all(request):
-    products = models.Products.products.all()
+    products = models.Products.products.all()[:50]
     context ={
         'products': products
     }
