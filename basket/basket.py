@@ -9,9 +9,7 @@ class Basket():
         self.session=request.session
         basket = self.session.get('skey')
         if 'skey' not in request.session:
-            basket = self.session['skey']={
-                
-            }
+            basket = self.session['skey']={}
         self.basket = basket
 
     def add(self,product,qty):

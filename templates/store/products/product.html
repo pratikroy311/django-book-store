@@ -62,7 +62,6 @@
                     action: 'post'
                 },
                 success: function (json) {
-                    console.log(json);
                     document.getElementById("basket-qty").innerHTML =json.qty;
                 },
                 error: function (xhr, errmsg, err) {}

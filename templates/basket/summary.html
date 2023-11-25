@@ -1,11 +1,11 @@
-{% extends './base.html' %}
+{% extends '../store/base.html' %}
 {% load static %}
 
 
 {% block title %} Basket Summary {% endblock %}
 
 {% block content %}
-{% include './navbar.html' %}
+{% include '../store/navbar.html' %}
 <div class="py-5 text-center container">
     <h5 class="h5 py-3">Shopping Cart</h5>
     {% for item in basket %}
